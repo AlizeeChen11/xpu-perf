@@ -21,25 +21,24 @@
 
 ## 子项目
 
-### [micro_perf](./micro_perf/)
+### [micro_perf](./projects/micro_perf/)
 算子测试框架。
 
-### [xpu_sim](./xpu_sim/)
+### [xpu_sim](./projects/xpu_oj/llm_sim/)
 基于算子测试框架的模型端到端性能和breakdown性能仿真工具。
 
-### [trace_gen](./trace_gen/)
+### [trace_gen](./projects/trace_gen/)
 独立的llm模型推理的请求生成工具。
 
-### [(old) infer_perf](./infer_perf/)
+### [(old) infer_perf](./projects/infer_perf/)
 原有的小模型、llm模型测试框架，已过时，正在调整中，未来将聚焦成熟推理框架（vllm、sglang）的bench能力。
 
-### [train_perf](./train_perf)
+### [train_perf](./projects/train_perf)
 llm模型训练评估工程。
 
 
 
 ## 引用
-**If you use this code or find our work valuable, please cite:**
 ```bibtex
 @inproceedings{cai2026characterizing,
   title={Characterizing Cloud-Native LLM Inference at Bytedance and Exposing Optimization Challenges and Opportunities for Future AI Accelerators},

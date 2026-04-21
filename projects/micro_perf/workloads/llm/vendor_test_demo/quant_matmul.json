@@ -1,0 +1,19 @@
+{
+    "quant_matmul": [
+        {
+            "arg_type": "llm", 
+            "dtype.w_dtype.compute_dtype.dst_dtype": [
+                ["int8", "int8", "int8", "bfloat16"], 
+                ["float8", "float8", "float8", "bfloat16"], 
+                ["mxfloat8", "mxfloat8", "mxfloat8", "bfloat16"], 
+                ["mxfloat4", "mxfloat4", "mxfloat4", "bfloat16"]
+            ], 
+            "sp_size.hidden_size.new_hidden_size": [
+                [1, 8192, 8192]
+            ], 
+            "num_tokens": [
+                10240
+            ]
+        }
+    ]
+}
