@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xpu-perf"
+version = "0.1.0"
+description = "XPU performance benchmarking toolkit"
+requires-python = ">=3.9"
+dependencies = [
+    "prettytable", 
+    "jsonlines", 
+    "flask", 
+    "requests", 
+    "numpy<=1.26.4"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
