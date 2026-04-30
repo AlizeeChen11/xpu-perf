@@ -58,7 +58,10 @@ if TYPE_CHECKING:
 
 logger = logging.get_logger(__name__)
 
-from transformers.models.deprecated._archive_maps import FALCON_PRETRAINED_MODEL_ARCHIVE_LIST  # noqa: F401, E402
+try:
+    from transformers.models.deprecated._archive_maps import FALCON_PRETRAINED_MODEL_ARCHIVE_LIST  # noqa: F401, E402
+except ModuleNotFoundError:
+    FALCON_PRETRAINED_MODEL_ARCHIVE_LIST = []
 
 
 _CHECKPOINT_FOR_DOC = "Rocketknight1/falcon-rw-1b"

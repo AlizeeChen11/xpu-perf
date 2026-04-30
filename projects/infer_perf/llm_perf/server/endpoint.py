@@ -3,6 +3,7 @@ import json
 import pathlib
 import asyncio
 import importlib
+import inspect
 from typing import Any, AsyncIterable, Dict, Iterable
 
 from transformers import AutoTokenizer, PreTrainedTokenizer
@@ -29,6 +30,15 @@ class LLMPerfEndpoint:
                 local_files_only=True,
                 trust_remote_code=True
             )
+            pad_signature = inspect.signature(self.tokenizer._pad)
+            if "padding_side" not in pad_signature.parameters:
+                original_pad = self.tokenizer._pad
+
+                def pad_compat(*args, **kwargs):
+                    kwargs.pop("padding_side", None)
+                    return original_pad(*args, **kwargs)
+
+                self.tokenizer._pad = pad_compat
             self.support_chn = tokenizer_config.get("support_chn", False)
             self.apply_chat_template = tokenizer_config.get("apply_chat_template", False)
         except Exception as e:
