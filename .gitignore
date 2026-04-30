@@ -33,3 +33,14 @@ workspace
 test
 
 *.egg-info
+# Local Python environments
+.venv/
+venv/
+
+# ByteMLPerf generated data and outputs
+projects/infer_perf/general_perf/backends/*/venv/
+projects/infer_perf/general_perf/datasets/open_imagenet/
+projects/infer_perf/general_perf/model_zoo/regular/
+projects/infer_perf/llm_perf/download/
+projects/infer_perf/llm_perf/model_zoo/sota
+projects/infer_perf/llm_perf/reports/
